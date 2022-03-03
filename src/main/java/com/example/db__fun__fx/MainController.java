@@ -28,7 +28,7 @@ public class MainController implements Initializable {
         signupBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                Utils.changeScene(event, "sign-up.fxml", "Sign up!", null, null);
             }
         });
     }
