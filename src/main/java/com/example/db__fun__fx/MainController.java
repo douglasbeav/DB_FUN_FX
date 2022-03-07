@@ -22,9 +22,19 @@ public class MainController implements Initializable {
     @FXML
     private PasswordField pswrdFld;
 
-
-    @Override
+     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        cnctBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Utils.loginUser(event, usrNameTxt.getText(), pswrdFld.getText());
+                usrNameTxt.setText("");
+                pswrdFld.setText("");
+                usrNameTxt.requestFocus();
+            }
+        });
+
         signupBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
