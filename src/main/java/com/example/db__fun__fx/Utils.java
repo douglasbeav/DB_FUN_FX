@@ -84,7 +84,7 @@ public class Utils {
             pstmt.setString(1, usrName);
             rs = pstmt.executeQuery();
 
-            if (rs.isBeforeFirst()) {
+            if (!rs.isBeforeFirst()) {
                 System.out.println("User not found");
                 Alert alert = new Alert(Alert.AlertType.ERROR, "User not found");
                 alert.show();

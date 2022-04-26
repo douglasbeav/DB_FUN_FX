@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db__fun__fx.LoggedInController">
    <children>
-      <Label fx:id="wlcmLbl" layoutX="186.0" layoutY="70.0" text="Welcome">
+      <Label fx:id="wlcmLbl" alignment="CENTER" contentDisplay="CENTER" layoutY="70.0" prefHeight="40.0" prefWidth="601.0" text="Welcome">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
-      <Label fx:id="favTeachLbl" layoutX="82.0" layoutY="180.0" text="Your favorite teacher is Douglas">
+      <Label fx:id="favTeachLbl" alignment="CENTER" contentDisplay="CENTER" layoutY="180.0" prefHeight="40.0" prefWidth="601.0" text="Your favorite teacher is Douglas">
          <font>
             <Font size="33.0" />
          </font>

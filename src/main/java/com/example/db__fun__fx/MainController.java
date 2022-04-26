@@ -22,7 +22,7 @@ public class MainController implements Initializable {
     @FXML
     private PasswordField pswrdFld;
 
-     @Override
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         cnctBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -39,6 +39,8 @@ public class MainController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 Utils.changeScene(event, "sign-up.fxml", "Sign up!", null, null);
+                usrNameTxt.setText("");
+                pswrdFld.setText("");
             }
         });
     }
