@@ -18,9 +18,9 @@ public class Utils {
     private static PreparedStatement psCheckUserExists = null;
     private static ResultSet rs = null;
     private static Connection connect = null;
-    private static String url = "jdbc:mysql://localhost:3306/company";
-    private static String usr = "root";
-    private static String pass = "12345678";
+    private static String url = System.getenv("url"); //"jdbc:mysql://localhost:3306/company";
+    private static String usr = System.getenv("usr"); //"root";
+    private static String pass = System.getenv("pass"); //"12345678";
 
 
     public static void changeScene(ActionEvent event, String fxmlFile, String title, String username, String favTeacher) {
