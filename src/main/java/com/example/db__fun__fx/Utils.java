@@ -79,6 +79,7 @@ public class Utils {
         }
     }
 
+//    Method to sign up a new user stored procedure
     public static void signUpUser_SP(ActionEvent event, String usrName, String password, String favTeacher) {
         try {
 
