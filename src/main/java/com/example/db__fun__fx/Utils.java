@@ -49,6 +49,7 @@ public class Utils {
         stage.show();
     }
 
+//    Method to sign up a new user
     public static void signUpUser(ActionEvent event, String usrName, String password, String favTeacher) {
         try {
 
