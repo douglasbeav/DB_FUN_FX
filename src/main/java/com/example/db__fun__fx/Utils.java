@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.sql.*;
 
@@ -64,6 +65,35 @@ public class Utils {
                 alert.show();
             } else {
                 psInsert = connect.prepareStatement("insert into users(usrName, password, favTeacher) values (?, ?, ?)");
+                psInsert.setString(1, usrName);
+                psInsert.setString(2, password);
+                psInsert.setString(3, favTeacher);
+                psInsert.executeUpdate();
+
+                changeScene(event, "logged-in.fxml", "Welcome!", usrName, favTeacher);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection();
+        }
+    }
+
+//    Method to sign up a new user stored procedure
+    public static void signUpUser_SP(ActionEvent event, String usrName, String password, String favTeacher) {
+        try {
+
+            connection();
+            psCheckUserExists = connect.prepareStatement("select * from users where usrName = ?");
+            psCheckUserExists.setString(1, usrName);
+            rs = psCheckUserExists.executeQuery();
+
+            if (rs.isBeforeFirst()) {
+                System.out.println("User already exists");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "User already exists");
+                alert.show();
+            } else {
+                psInsert = connect.prepareCall("{CALL addUser(?, ?, ?)}");
                 psInsert.setString(1, usrName);
                 psInsert.setString(2, password);
                 psInsert.setString(3, favTeacher);
